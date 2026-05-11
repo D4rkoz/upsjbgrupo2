@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VIH | UPSJB</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+:root{
+    --rojo1:#b3003b;
+    --rojo2:#d9044b;
+    --rojo3:#ff0f5b;
+    --rosa:#fff4f8;
+    --dorado:#ffd166;
+}
+
+body{
+    font-family:'Segoe UI',sans-serif;
+    background:linear-gradient(to bottom,#fff7fa,#fff);
+    color:#222;
+    line-height:1.6;
+}
+
+.container{
+    max-width:1200px;
+    margin:auto;
+    padding:0 24px;
+}
+
+/* HEADER */
+
+.top{
+    background:linear-gradient(90deg,var(--rojo1),var(--rojo2));
+    padding:14px 0;
+    color:white;
+}
+
+.top-content{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:15px;
+}
+
+.logo-upsjb{
+    height:75px;
+}
+
+.motto{
+    background:rgba(255,255,255,.15);
+    padding:8px 16px;
+    border-radius:30px;
+    font-size:.9rem;
+}
+
+/* HERO */
+
+.hero{
+    background:linear-gradient(135deg,var(--rojo1),var(--rojo2),var(--rojo3));
+    color:white;
+    padding:4rem 0;
+    border-radius:0 0 40px 40px;
+    position:relative;
+    overflow:hidden;
+}
+
+.hero::before{
+    content:"";
+    position:absolute;
+    right:-120px;
+    top:0;
+    width:450px;
+    height:100%;
+    background:rgba(255,255,255,.08);
+    transform:skewX(-35deg);
+}
+
+.hero-content{
+    position:relative;
+    z-index:2;
+}
+
+.hero-badge{
+    display:inline-block;
+    background:rgba(255,255,255,.15);
+    padding:.5rem 1rem;
+    border-radius:30px;
+    margin-bottom:1rem;
+    font-weight:700;
+}
+
+.hero h1{
+    font-size:3rem;
+    line-height:1.2;
+    max-width:850px;
+}
+
+.frase{
+    margin-top:1.5rem;
+    display:inline-block;
+    background:rgba(0,0,0,.15);
+    padding:1rem 1.5rem;
+    border-left:5px solid var(--dorado);
+    border-radius:0 14px 14px 0;
+    font-size:1.3rem;
+    font-weight:700;
+}
+
+.btn{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    margin-top:2rem;
+    background:white;
+    color:var(--rojo1);
+    padding:14px 28px;
+    border-radius:50px;
+    text-decoration:none;
+    font-weight:800;
+    transition:.2s;
+}
+
+.btn:hover{
+    transform:translateY(-3px);
+    background:#ffe3ec;
+}
+
+.welcome{
+    margin-top:1.8rem;
+    background:rgba(255,255,255,.95);
+    color:#222;
+    padding:1rem 1.5rem;
+    border-radius:24px;
+    max-width:850px;
+}
+
+/* TITULOS */
+
+.title{
+    margin:3rem 0 1.5rem;
+    border-left:6px solid var(--dorado);
+    padding-left:18px;
+    color:var(--rojo1);
+    font-size:2rem;
+    font-weight:800;
+}
+
+/* CARDS */
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:1.5rem;
+    margin:2rem 0;
+}
+
+.card{
+    background:white;
+    padding:1.8rem;
+    border-radius:28px;
+    border:1px solid #ffd4e1;
+    box-shadow:0 8px 20px rgba(0,0,0,.05);
+    transition:.2s;
+}
+
+.card:hover{
+    transform:translateY(-5px);
+}
+
+.icon{
+    font-size:2.3rem;
+    color:var(--rojo2);
+    margin-bottom:1rem;
+}
+
+.card h3{
+    margin-bottom:.7rem;
+    color:#7d0032;
+}
+
+.badge{
+    display:inline-block;
+    background:#ffe5ef;
+    color:var(--rojo1);
+    padding:.3rem .9rem;
+    border-radius:30px;
+    font-size:.75rem;
+    font-weight:700;
+    margin-bottom:.8rem;
+}
+
+/* BOX */
+
+.box{
+    background:white;
+    padding:2rem;
+    border-radius:30px;
+    border-left:6px solid var(--dorado);
+    box-shadow:0 8px 20px rgba(0,0,0,.05);
+    margin:2rem 0;
+}
+
+.box ul{
+    padding-left:1.5rem;
+}
+
+.box li{
+    margin-bottom:.8rem;
+}
+
+/* STATS */
+
+.stats{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:1rem;
+    margin:2rem 0;
+}
+
+.stat{
+    background:var(--rosa);
+    padding:1.5rem;
+    border-radius:24px;
+    text-align:center;
+}
+
+.num{
+    font-size:2rem;
+    font-weight:800;
+    color:var(--rojo1);
+}
+
+/* TABLA */
+
+.table-box{
+    overflow-x:auto;
+    margin-top:1.5rem;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    overflow:hidden;
+    border-radius:20px;
+}
+
+thead{
+    background:linear-gradient(90deg,var(--rojo1),var(--rojo2));
+    color:white;
+}
+
+th,td{
+    padding:16px;
+    text-align:left;
+}
+
+td{
+    background:white;
+    border-bottom:1px solid #ffd6e2;
+}
+
+tbody tr:hover td{
+    background:#fff4f8;
+}
+
+/* FOOTER */
+
+footer{
+    margin-top:4rem;
+    background:linear-gradient(90deg,var(--rojo1),var(--rojo2));
+    color:white;
+    padding:2rem 0;
+    border-radius:35px 35px 0 0;
+}
+
+.footer{
+    display:flex;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    gap:1rem;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:768px){
+
+.hero h1{
+    font-size:2rem;
+}
+
+.frase{
+    font-size:1rem;
+}
+
+.title{
+    font-size:1.5rem;
+}
+
+.logo-upsjb{
+    height:60px;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+
+<div class="top">
+
+<div class="container top-content">
+
+<img src="logoupsjb.png" alt="UPSJB" class="logo-upsjb">
+
+<div class="motto">
+    <i class="fas fa-stethoscope"></i>
+    Investigación · Prevención · Salud Pública
+</div>
+
+</div>
+</div>
+
+<!-- HERO -->
+
+<section class="hero">
+
+<div class="container hero-content">
+
+<div class="hero-badge">
+    <i class="fas fa-ribbon"></i>
+    VIH · EDUCACIÓN Y PREVENCIÓN
+</div>
+
+<h1>
+Prevención del VIH,
+tratamiento y calidad de vida
+</h1>
+
+<div class="frase">
+👉 “La información salva vidas”
+</div>
+
+<br>
+
+<a href="#info" class="btn">
+    <i class="fas fa-circle-info"></i>
+    Infórmate aquí
+</a>
+
+<div class="welcome">
+❤️ Bienvenido/a al portal educativo de la UPSJB.
+Conoce sobre prevención, síntomas,
+tratamiento y situación del VIH en Perú.
+</div>
+
+</div>
+</section>
+
+<!-- CONTENIDO -->
+
+<main class="container" id="info">
+
+<div class="grid">
+
+<div class="card">
+
+<i class="fas fa-virus icon"></i>
+
+<div class="badge">¿QUÉ ES?</div>
+
+<h3>VIH</h3>
+
+<p>
+El Virus de Inmunodeficiencia Humana
+afecta el sistema inmunológico
+y disminuye las defensas del cuerpo.
+</p>
+
+</div>
+
+<div class="card">
+
+<i class="fas fa-heartbeat icon"></i>
+
+<div class="badge">TRATAMIENTO</div>
+
+<h3>Terapia Antirretroviral</h3>
+
+<p>
+El tratamiento permite controlar el virus
+y mejorar la calidad de vida.
+</p>
+
+</div>
+
+<div class="card">
+
+<i class="fas fa-users icon"></i>
+
+<div class="badge">VIDA NORMAL</div>
+
+<h3>Calidad de vida</h3>
+
+<p>
+Las personas con VIH pueden estudiar,
+trabajar y llevar una vida plena.
+</p>
+
+</div>
+
+</div>
+
+<!-- TRANSMISION -->
+
+<div class="title">
+<i class="fas fa-share-alt"></i>
+¿Cómo se transmite?
+</div>
+
+<div class="box">
+
+<ul>
+<li>Relaciones sexuales sin protección.</li>
+<li>Contacto con sangre infectada.</li>
+<li>Compartir agujas o jeringas.</li>
+<li>Transmisión de madre a hijo.</li>
+</ul>
+
+<br>
+
+<p>
+❌ El VIH no se transmite por abrazos,
+comida, saliva ni mosquitos.
+</p>
+
+</div>
+
+<!-- PREVENCION -->
+
+<div class="title">
+<i class="fas fa-shield-virus"></i>
+Prevención
+</div>
+
+<div class="grid">
+
+<div class="card">
+<i class="fas fa-condom icon"></i>
+<h3>Preservativo</h3>
+<p>Reduce el riesgo de transmisión.</p>
+</div>
+
+<div class="card">
+<i class="fas fa-tablets icon"></i>
+<h3>PrEP</h3>
+<p>Medicamento preventivo para personas con alto riesgo.</p>
+</div>
+
+<div class="card">
+<i class="fas fa-syringe icon"></i>
+<h3>PEP</h3>
+<p>Tratamiento de emergencia durante las primeras 72 horas.</p>
+</div>
+
+<div class="card">
+<i class="fas fa-vial icon"></i>
+<h3>Pruebas</h3>
+<p>El diagnóstico temprano salva vidas.</p>
+</div>
+
+</div>
+
+<!-- SINTOMAS -->
+
+<div class="title">
+<i class="fas fa-head-side-medical"></i>
+Síntomas
+</div>
+
+<div class="box">
+
+<ul>
+<li>Fiebre persistente.</li>
+<li>Fatiga extrema.</li>
+<li>Ganglios inflamados.</li>
+<li>Sudoración nocturna.</li>
+<li>Pérdida de peso.</li>
+<li>Dolor de garganta.</li>
+</ul>
+
+<br>
+
+<p>
+⚠️ Muchas personas pueden no presentar síntomas.
+La prueba es la única forma segura de saberlo.
+</p>
+
+</div>
+
+<!-- ESTADISTICAS -->
+
+<div class="title">
+<i class="fas fa-chart-pie"></i>
+Estadísticas del VIH en Perú
+</div>
+
+<div class="box">
+
+<div class="stats">
+
+<div class="stat">
+<div class="num">70%</div>
+<p>Casos en Lima y Callao.</p>
+</div>
+
+<div class="stat">
+<div class="num">15-29</div>
+<p>Grupo más afectado.</p>
+</div>
+
+<div class="stat">
+<div class="num">+110k</div>
+<p>Personas viven con VIH.</p>
+</div>
+
+<div class="stat">
+<div class="num">U=U</div>
+<p>Indetectable = Intransmisible.</p>
+</div>
+
+</div>
+
+<div class="table-box">
+
+<table>
+
+<thead>
+<tr>
+<th>Indicador</th>
+<th>Dato</th>
+</tr>
+</thead>
+
+<tbody>
+
+<tr>
+<td>Personas viviendo con VIH</td>
+<td>Más de 110 000</td>
+</tr>
+
+<tr>
+<td>Casos en Lima y Callao</td>
+<td>70%</td>
+</tr>
+
+<tr>
+<td>Grupo más afectado</td>
+<td>15 - 29 años</td>
+</tr>
+
+<tr>
+<td>Nuevos casos anuales</td>
+<td>Más de 8 000</td>
+</tr>
+
+<tr>
+<td>Principal vía de transmisión</td>
+<td>Relaciones sexuales sin protección</td>
+</tr>
+
+<tr>
+<td>Tratamiento gratuito</td>
+<td>Disponible en hospitales públicos</td>
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+</div>
+
+<!-- CALIDAD -->
+
+<div class="title">
+<i class="fas fa-hand-holding-heart"></i>
+Calidad de vida
+</div>
+
+<div class="box">
+
+<ul>
+<li>La esperanza de vida puede ser similar a la población general.</li>
+<li>El tratamiento evita el desarrollo del SIDA.</li>
+<li>La carga viral puede llegar a ser indetectable.</li>
+<li>Las personas con VIH pueden llevar una vida normal.</li>
+</ul>
+
+<br>
+
+<p>
+❤️ La educación y el respeto ayudan a disminuir el estigma.
+</p>
+
+</div>
+
+</main>
+
+<!-- FOOTER -->
+
+<footer>
+
+<div class="container footer">
+
+<div>
+<i class="fas fa-university"></i>
+Universidad Privada San Juan Bautista
+</div>
+
+<div>
+MINSA · ONUSIDA · CDC
+</div>
+
+<div>
+Educación · Prevención · Salud Pública
+</div>
+
+</div>
+
+</footer>
+
+</body>
+</html>
